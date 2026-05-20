@@ -1,0 +1,63 @@
+digraph MuseumDesignOntology {
+    // 圖表全域設定
+    rankdir=LR;
+    node [shape=box, style=filled, fillcolor="#f9f9f9", fontname="sans-serif"];
+    edge [color="#666666"];
+
+    // 定義核心設計案例 (可選)
+    DesignCase [label="Museum Case", shape=ellipse, fillcolor="#d4e1f9"];
+
+    // 5 Top Senses (頂層概念，依照你的要求不加上中文描述)
+    building [label="building", fillcolor="#ffdfba"];
+    site [label="site", fillcolor="#bae1ff"];
+    circulation [label="circulation", fillcolor="#e8baff"];
+    material [label="material", fillcolor="#baffc9"];
+    light [label="light", fillcolor="#ffffba"];
+
+
+    // 連結核心與頂層概念
+    DesignCase -> building;
+    DesignCase ->  site;
+    DesignCase ->circulation;
+    DesignCase -> material;
+    DesignCase ->light;
+
+
+
+    // 1. Building
+    building -> ExhibitionSpace [label=" 展演空間"];
+    building -> PublicSpace [label=" 公共與服務空間"];
+    building -> PrivateSpace [label=" 專業與後場空間"];
+    building -> TransitionZone [label=" 過渡空間"];
+    building -> StorageZone [label=" 典藏空間"];
+    building -> Plaza [label=" 戶外空間"];
+    building -> Massing [label=" 量體與造型"];
+    building -> Structure [label=" 結構系統"];
+    building -> Facade [label=" 立面封閉與開放性"];
+    
+
+    // 2. Site
+    site -> GeographicLocation [label=" 基地地理位置"];
+    site -> Context [label=" 周遭環境與都市紋理"];
+
+
+
+    // 3. Circulation
+    circulation -> VisitorFlow [label=" 參觀動線"];
+    circulation -> ServiceFlow [label=" 服務動線"];
+    circulation -> SupportFlow [label=" 支援動線"];
+    circulation -> VerticalCirculation [label=" 垂直動線"];
+    circulation -> SpatialSequence [label=" 空間邏輯"];
+
+    // 4. Material
+    material -> ExteriorMaterial [label=" 建築外觀材質"];
+    material -> GalleryFinish [label=" 展廳內部材質"];
+    material -> PsychologicalImpact [label=" 觸覺與心理感受"];
+    material -> ConstructionDetail [label=" 構造與細部"];
+
+    // 5. Light 
+    light -> NaturalLighting [label=" 自然光導入"];
+    light -> ArtificialLighting [label=" 人工照明"];
+    light -> ConservationControl [label=" 光害與保存控制"];
+    light -> LightGuidance [label=" 光線引導"];
+}
